@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Handler\Factory\GraphqlHandlerFactory;
+use App\Handler\GraphqlHandler;
+
 /**
  * The configuration provider for the App module
  *
@@ -21,7 +24,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
-            'templates'    => $this->getTemplates(),
+            'templates' => $this->getTemplates(),
         ];
     }
 
@@ -32,10 +35,10 @@ class ConfigProvider
     {
         return [
             'invokables' => [
-                Handler\PingHandler::class => Handler\PingHandler::class,
+                Handler\HomePageHandler::class,
             ],
-            'factories'  => [
-                Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
+            'factories' => [
+                GraphqlHandler::class => GraphqlHandlerFactory::class,
             ],
         ];
     }
@@ -47,8 +50,8 @@ class ConfigProvider
     {
         return [
             'paths' => [
-                'app'    => ['templates/app'],
-                'error'  => ['templates/error'],
+                'app' => ['templates/app'],
+                'error' => ['templates/error'],
                 'layout' => ['templates/layout'],
             ],
         ];
