@@ -6,6 +6,10 @@ namespace App;
 
 use App\Handler\Factory\GraphqlHandlerFactory;
 use App\Handler\GraphqlHandler;
+use App\Middleware\RequestLoggerMiddleware;
+use App\Middleware\RequestLoggerMiddlewareFactory;
+use App\Middleware\ResponseLoggerMiddleware;
+use App\Middleware\ResponseLoggerMiddlewareFactory;
 
 /**
  * The configuration provider for the App module
@@ -39,6 +43,8 @@ class ConfigProvider
             ],
             'factories' => [
                 GraphqlHandler::class => GraphqlHandlerFactory::class,
+                RequestLoggerMiddleware::class => RequestLoggerMiddlewareFactory::class,
+                ResponseLoggerMiddleware::class => ResponseLoggerMiddlewareFactory::class,
             ],
         ];
     }

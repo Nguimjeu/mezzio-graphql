@@ -14,9 +14,10 @@ class HomePageHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        return new JsonResponse([
-            'welcome' => 'Congratulations! You have installed the mezzio skeleton application.',
-            'docsUrl' => 'https://docs.mezzio.dev/mezzio/',
-        ]);
+        return new JsonResponse(
+            [
+                'help' => 'use {{base-url}}/graphql',
+            ]
+        );
     }
 }

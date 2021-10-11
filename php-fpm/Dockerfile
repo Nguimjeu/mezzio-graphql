@@ -2,7 +2,6 @@ FROM php:8-fpm
 
 ARG uid
 ARG user
-ARG password
 
 RUN apt-get update && apt-get install -y \
     apt-utils \
