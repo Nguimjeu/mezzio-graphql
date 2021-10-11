@@ -8,7 +8,6 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\HostnameProcessor;
 use Monolog\Processor\PsrLogMessageProcessor;
-use Monolog\Processor\WebProcessor;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 
@@ -27,7 +26,6 @@ class LoggerFactory
 
         $logger->pushHandler(handler: $handler);
         $logger->pushProcessor(new PsrLogMessageProcessor())
-            ->pushProcessor(new WebProcessor())
             ->pushProcessor(new HostnameProcessor());
 
         return $logger;

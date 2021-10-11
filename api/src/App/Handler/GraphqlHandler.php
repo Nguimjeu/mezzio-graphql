@@ -20,8 +20,6 @@ class GraphqlHandler implements RequestHandlerInterface, LoggerAwareInterface
      */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $this->logger->info('Logging is up and running');
-
         return new JsonResponse(
             [
                 'method' => __METHOD__,

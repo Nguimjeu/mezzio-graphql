@@ -66,7 +66,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "AppTest\\": "test/AppTest/"
+            "App\\": "test/App/"
         }
     },
     "scripts": {
